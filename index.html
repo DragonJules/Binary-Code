@@ -5,12 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="dist/index.js" defer type="module"></script>
 
-    <title>Document</title>
+    <title>The Binary Code</title>
 </head>
 <body>
+    <svg viewBox="0 0 200 200" xmlns='http://www.w3.org/2000/svg' style="display: none;">
+        <filter id='noiseFilter'>
+            <feTurbulence 
+            type='fractalNoise' 
+            baseFrequency='0.65' 
+            numOctaves='1'
+            stitchTiles='stitch'/>
+            <feColorMatrix type="saturate" values="0" />
+        </filter>
+
+
+    <rect
+        width='100%' 
+        height='100%' 
+        filter='url(#noiseFilter)' />
+    </svg>
+
+    <div class="container">
+        <div class="color-circle-container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <header class="slide hero">
+            
+            <div class="hero__container">
+                <h1 class="hero__title binary-anim-container glow">The Binary Code</h1>
+            </div>
+            
+            
+        </header>
     
+        <section class="slide history">
+            <h2>History</h2>
+        </section>
+
+        <section class="slide binary-code">
+            <h2>The Binary Code</h2>
+        </section>
+        
+        <section class="slide binary-logic">
+            <h2>Binary Logic</h2>
+        </section>
+
+        <section class="slide use-in-elec">
+            <h2>Use in electronic and computers</h2>
+        </section>
+        
+        <section class="slide end">
+            <h2>End</h2>
+        </section>
+    </div>
 </body>
 </html>
