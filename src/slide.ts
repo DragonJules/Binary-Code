@@ -1,7 +1,14 @@
 export class Slide {
-    constructor (onDisplay: Function) {
-        this.onDisplay = onDisplay;
+    constructor (reset?: Function, onAction?: Function) {
+        this.reset = () => {
+            if (reset) reset()
+        }
+        this.onAction = () => {
+            if (this.reset) this.reset()
+            if (onAction) onAction()
+        }
     }
 
-    onDisplay: Function
+    reset: Function
+    onAction: Function
 }

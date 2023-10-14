@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+body {
+	font-family: 'Mulish', sans-serif;
+
+	background-color: $txt-dark;
+	color: $txt-light;
+
+    position: relative;
+
+    overflow: hidden;
+
+	cursor: none;
+}
+
+
+.slide {
+	height: 100vh;
+	width: 100%;
+
+    padding: 1.5vh 1.8vh;
+}
+
+.binary-anim-container {
+    font-family: 'Source Code Pro', monospace;
+}
+
+
+.color-circle-container {
+    position: fixed;
+	overflow: hidden;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+
+	
+
+	div {
+		aspect-ratio: 1 / 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 999px;
+        
+        animation: float 20s ease infinite;
+        // filter: blur(300px);
+        filter: blur(300px);
+	}
+    
+	:nth-child(1) {
+		top: 50%;
+		left: 70%;
+		width: 30%;
+		background-color: hsl(233, 74%, 35%);
+        animation-delay: 0s;
+	}
+    
+	:nth-child(2) {
+        top: 10%;
+		left: 60%;
+        
+		width: 24%;
+		background-color: hsl(249, 57%, 35%);
+        animation-delay: -3s;
+	}
+    
+	:nth-child(3) {
+        top: 75%;
+		left: 30%;
+        
+		width: 25%;
+		background-color: hsl(230, 69%, 35%);
+        animation-delay: -7s;
+	}
+
+	:nth-child(4) {
+		top: 5%;
+		left: 7%;
+        
+		width: 38%;
+		background-color: hsl(258, 70%, 35%);
+        animation-delay: -9s;
+	}
+
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    
+        filter: url(#noiseFilter)
+            brightness(0);
+        opacity: .7;
+        mix-blend-mode: soft-light;
+    }
+}
+
+.glow {
+    animation: glow 5s ease infinite;
+}
+
+h1 {
+    @extend %h1-properties;
+}
+
+h2 {
+    @extend %h2-properties;
+}
+
+h3 {
+    @extend %h3-properties;
+}
+
+p {
+    font-size: 1.3rem;
+}
