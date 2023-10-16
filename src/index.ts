@@ -14,25 +14,53 @@ BINARY_ANIMATION_CONTAINERS.forEach((container, index) => {
 })
 
 
+const LEFT_REVEAL_ELEMENTS = [...document.querySelectorAll('.left-reveal')] as HTMLElement[]
+LEFT_REVEAL_ELEMENTS.forEach(element => {
+    element.classList.remove('left-reveal')
+    element.outerHTML = `<div class="left-reveal">${element.outerHTML}</div>`
+})
+
 
 let slides: Slide[] = []
 
-
-slides.push(new Slide(
+const heroTitleBinAnimEl = binary_animation_elements[0]
+slides.push(new Slide('hero',
     () => {
-        let title_bin_anim_el = binary_animation_elements[0]
-        title_bin_anim_el.reset()
+        heroTitleBinAnimEl.reset()
     },
-    () => {
-        let title_bin_anim_el = binary_animation_elements[0]
-        title_bin_anim_el.startAnimation(true)
-    }
+    undefined,
+    [
+        () => {
+            heroTitleBinAnimEl.startAnimation(true)
+        }
+    ]
 ))
-slides.push(new Slide())
-slides.push(new Slide())
-slides.push(new Slide())
-slides.push(new Slide())
-slides.push(new Slide(    
+
+const historyCards = [...document.querySelectorAll('.history__card')]
+
+const historyCardsReveal = historyCards.map(card => (() => {
+    card.querySelector('.image-container.blur')?.classList.remove('blur-enabled')
+    let leftRevealEls = [...card.querySelectorAll('.left-reveal')]
+    leftRevealEls.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('left-revealed')
+        }, 50*(index+1));
+    })
+}) as Function)
+
+slides.push(new Slide('history', 
+    () => {
+        historyCards.forEach(card => {
+            card.querySelector('.image-container.blur')?.classList.add('blur-enabled')
+        })
+    },
+    undefined,
+    historyCardsReveal
+))
+slides.push(new Slide('binary-code'))
+slides.push(new Slide('binary-logic'))
+slides.push(new Slide('use-in-elec'))
+slides.push(new Slide('end',    
     () => {
         let title_bin_anim_el = binary_animation_elements[1]
         title_bin_anim_el.reset()
@@ -44,7 +72,7 @@ slides.push(new Slide(
 ))
 
 
-let current_slide_index = 0
+let current_slide_index = 3
 
 window.addEventListener('contextmenu', event => event.preventDefault())
 
@@ -58,6 +86,14 @@ window.addEventListener('keydown', (event: KeyboardEvent) => {
     }
 
     if (event.key === 'PageDown' || event.key === 'End') {
+        event.preventDefault()
+    }
+
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        event.preventDefault()
+    }
+
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
         event.preventDefault()
     }
 })
@@ -75,6 +111,16 @@ window.addEventListener('keyup', (event: KeyboardEvent) => {
         event.preventDefault()
         scrollToIndex(slides.length-1, 'instant')
     }
+
+    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        event.preventDefault()
+        scrollToIndex(Math.min(current_slide_index+1, slides.length-1), 'instant')
+    }
+
+    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        event.preventDefault()
+        scrollToIndex(Math.max(0, current_slide_index-1), 'instant')
+    }
 })
 
 window.addEventListener('mousedown', event => {
@@ -86,13 +132,13 @@ window.addEventListener('mouseup', event => {
 })
 
 const scrollToIndex = (index: number, behavior: ScrollBehavior = 'smooth' ) => {
+    current_slide_index = index
+    let current_slide = slides[current_slide_index]
     window.scrollTo({
         top: window.innerHeight * index,
         behavior: behavior 
     })
-    current_slide_index = index
-    let current_slide = slides[current_slide_index]
-    current_slide.reset()
+    current_slide.onDisplay()
 }
 
 const on_next_action = () => {
@@ -102,10 +148,17 @@ const on_next_action = () => {
         return
     }
 
-    scrollToIndex(current_slide_index)
-    current_slide.onAction()
-    current_slide_index ++
+    if (!current_slide.hasFinishedActions()) {
+        current_slide.executeAction()
+    }
+    else {
+        current_slide_index ++
+        scrollToIndex(current_slide_index)
+    }
 }
 
 
-// window.dispatchEvent(new KeyboardEvent('keyup', {'key': ' '}))
+setTimeout(() => {
+    scrollToIndex(current_slide_index, 'instant')
+}, 600);
+

@@ -38,7 +38,7 @@
     <header class="slide hero">
         
         <div class="hero__container">
-            <h1 class="hero__title binary-anim-container glow">The Binary Code</h1>
+            <h1 class="hero__title binary-anim-container txt-glow">The Binary Code</h1>
         </div>
         
         
@@ -46,6 +46,53 @@
 
     <section class="slide history">
         <h3>History</h3>
+
+        <div class="history__container">
+            <div class="history__card">
+                <div class="image-container blur blur-enabled">
+                    <img src="./assets/images/IChing.png" alt="IChing">
+                </div>
+                <h4 class="left-reveal">I Ching</h4>
+                <ul class="left-reveal">
+                    <li>Bla</li>
+                    <li>Bla</li>
+                    <li>Bla</li>
+                </ul>
+            </div>
+            <div class="history__card">
+                <div class="image-container blur blur-enabled">
+                    <img src="./assets/images/Leibniz.png" alt="Leibniz">
+                </div>
+                <h4 class="left-reveal">Gottfried Leibniz</h4>
+                <ul class="left-reveal">
+                    <li>Bla</li>
+                    <li>Bla</li>
+                    <li>Bla</li>
+                </ul>
+            </div>
+            <div class="history__card">
+                <div class="image-container blur blur-enabled">
+                    <img src="./assets/images/Boole.png" alt="Boole">
+                </div>
+                <h4 class="left-reveal">George Boole</h4>
+                <ul class="left-reveal">
+                    <li>Bla</li>
+                    <li>Bla</li>
+                    <li>Bla</li>
+                </ul>
+            </div>
+            <div class="history__card">
+                <div class="image-container blur blur-enabled">
+                    <img src="./assets/images/Shannon.png" alt="Shannon">
+                </div>
+                <h4 class="left-reveal">Claude Shannon</h4>
+                <ul class="left-reveal">
+                    <li>Bla</li>
+                    <li>Bla</li>
+                    <li>Bla</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section class="slide binary-code">
@@ -54,6 +101,327 @@
     
     <section class="slide binary-logic">
         <h3>Binary Logic</h3>
+        <div class="binary-logic__container logic-gates">
+            <h4>Logic Gates</h4>
+        
+            <div class="logic-gates__container">
+                <div class="logic-gate__card selected">
+                    <h5><strong>Buffer</strong></h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/Buffer2.png" alt="Buffer" class="logic-gate__img">
+                        <img src="./assets/images/Buffer.svg" alt="Buffer Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>NOT</strong>: Inverter</h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/NOT2.png" alt="NOT" class="logic-gate__img">
+                        <img src="./assets/images/NOT.svg" alt="NOT Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>AND</strong></h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/AND2.png" alt="AND" class="logic-gate__img">
+                        <img src="./assets/images/And.svg" alt="AND Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>OR</strong></h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/OR2.png" alt="OR" class="logic-gate__img">
+                        <img src="./assets/images/OR.svg" alt="OR Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>NAND</strong>: Not AND</h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/NAND2.png" alt="NAND" class="logic-gate__img">
+                        <img src="./assets/images/NAND.svg" alt="NAND Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>NOR</strong>: NOT OR</h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/NOR2.png" alt="NOR" class="logic-gate__img">
+                        <img src="./assets/images/NOR.svg" alt="NOR Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>XOR</strong>: Exclusive OR</h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/XOR2.png" alt="XOR" class="logic-gate__img">
+                        <img src="./assets/images/XOR.svg" alt="XOR Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="logic-gate__card">
+                    <h5><strong>XNOR</strong>: Not Exclusive OR</h5>
+                    <div class="logic-gate__properties">
+                        <img src="./assets/images/XNOR2.png" alt="XNOR" class="logic-gate__img">
+                        <img src="./assets/images/XNOR.svg" alt="XNOR Equation" class="logic-gate__img-equation">
+                    </div>
+                    <table class="bin-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Input</th>
+                                <th>Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="binary-logic__container boolean-algebra">
+
+        </div>
+
     </section>
 
     <section class="slide use-in-elec">
@@ -62,7 +430,7 @@
     
     <section class="slide end">
         <div class="center">
-            <h2 class="glow binary-anim-container">Thanks for your attention</h2>
+            <h2 class="txt-glow binary-anim-container">Thanks for your attention</h2>
         </div>
         
         <p>Sources: Mr Ubycha, Wikipedia</p>

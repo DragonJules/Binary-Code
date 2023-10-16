@@ -26,11 +26,149 @@
         align-items: center;
         justify-content: center;
     }
+}
 
+.history {
+    h3 {
+        margin-bottom: $default-padding;
+    }
+    .history__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);;
+        gap: calc($default-padding*4);
+    }
+    .history__card {
+        img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top;
+            margin-bottom: $default-padding;
+        }
+        h4 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        ul {
+            margin-top: $default-padding;
+            font-size: 2rem;
+        }
+    }
 }
 
 
 
+
+.binary-logic {
+    display: flex;
+    flex-direction: column;
+    .logic-gates {
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        img {
+            filter: brightness(0) invert(1);
+        }
+
+        h4 {
+            margin-bottom: $default-padding;
+        }
+
+        .logic-gates__container {
+            flex-grow: 1;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: calc($default-padding*4);
+
+            .logic-gate__card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border-radius: $default-radius;
+                backdrop-filter: blur(20px);
+                background-color: rgba($color: $txt-light, $alpha: .1);
+                border: 1.5px solid rgba($color: $txt-light, $alpha: .3);
+                padding: $default-padding*2.5;
+
+                h5 {
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: $txt-gray;
+                    strong {
+                        color: $txt-light;
+                    }
+                }
+
+
+                &.selected {
+                    background-color: rgba($color: $txt-light, $alpha: .15);
+                    border-color: rgba($color: $txt-light, $alpha: .6); 
+                    // @extend .glow
+                }
+                
+                
+                .logic-gate__properties {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;  
+                    place-items: center;
+                    .logic-gate__img {
+                        width: 90%;
+                    }
+                    .logic-gate__img-equation {
+                        height: 90%;
+                        padding: $default-padding;
+                        border: 2px solid rgba(0, 0, 0, 0.5);
+                    }
+                }
+
+                .bin-table {
+                    border-collapse: collapse;
+                    width: 100%;
+
+                    thead tr {
+                        background-color: rgba($color: $txt-light, $alpha: .15);
+                        text-align: left;
+                    }
+
+                    th {
+                       font-size: 1.2rem; 
+                       font-weight: 600;
+                    }
+
+                    th, td {
+                        padding: $default-padding/2.5 $default-padding;
+                    }
+
+                    tbody tr, td, th {
+                        border: 1px solid rgba($color: $txt-light, $alpha: .15);
+                    }
+
+                    tbody tr:first-of-type td {
+                        font-weight: 600;
+                    }
+
+                    tr:nth-of-type(even) {
+                        background-color: rgba($color: $txt-light, $alpha: .03);
+                    }
+
+                }
+
+                &:nth-of-type(1), &:nth-of-type(2) {
+                    th, td {
+                        padding: $default-padding/1.2 $default-padding*1.8;
+                    }
+                }
+
+            }
+        }
+    }
+
+
+}
 
 
 

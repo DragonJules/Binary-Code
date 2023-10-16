@@ -31,7 +31,8 @@ body {
 	height: 100vh;
 	width: 100%;
 
-    padding: 1.5vh 1.8vh;
+    padding: $slide-padding-y $slide-padding-x;
+	overflow: hidden;
 }
 
 .binary-anim-container {
@@ -112,22 +113,74 @@ body {
     }
 }
 
+.txt-glow {
+    animation: txt-glow 5s ease infinite;
+}
+
 .glow {
     animation: glow 5s ease infinite;
 }
 
 h1 {
-    @extend %h1-properties;
+	font-size: 5.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
 }
 
 h2 {
-    @extend %h2-properties;
+	font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
 }
 
 h3 {
-    @extend %h3-properties;
+	font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+	margin-bottom: calc($default-padding*2/4);
 }
 
-p {
+h4 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+
+p, ul {
     font-size: 1.3rem;
+}
+
+strong {
+	font-weight: 650;
+}
+
+.blur {
+	filter: blur(0);
+	opacity: 1;
+    transition: filter 0.25s ease-out, opacity 0.25s ease-out;
+	&.blur-enabled {
+		filter: blur(40px);
+		opacity: 0.1;
+	}
+}
+
+img {
+	max-width: 100%;
+	border-radius: $default-radius;
+}
+
+ul {
+	list-style-position: inside;
+}
+
+
+div.left-reveal {
+	overflow: hidden;
+	& > * {
+		transform: translate(-100%);
+		transition: transform 0.3s ease-out;
+	}
+}
+div.left-reveal.left-revealed > * {
+	transform: translateX(0);
 }
