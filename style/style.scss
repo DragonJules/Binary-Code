@@ -53,6 +53,7 @@
         ul {
             margin-top: $default-padding;
             font-size: 2rem;
+            line-height: 2.8rem;
         }
     }
 }
@@ -175,27 +176,41 @@
                         }
     
                         th, td {
-                            padding: 0.4vh 1vh;
-                        }
-    
-                        tbody tr, td, th {
-                            border: 1px solid rgba($color: $txt-light, $alpha: .15);
+                            padding: 0.6vh 1.2vh;
                         }
     
                         tbody tr:first-of-type td {
                             font-weight: 600;
                         }
     
-                        tr:nth-of-type(even) {
+                        tbody tr:nth-of-type(even) {
+                            background-color: rgba($color: $txt-light, $alpha: .05);
+                        }
+                            
+                        tbody tr:nth-of-type(odd) {
                             background-color: rgba($color: $txt-light, $alpha: .03);
                         }
 
+
+                        thead tr:first-child th:first-of-type {
+                            border-radius: $default-radius/1.5 0 0 0;
+                        }
+                        thead tr:first-child th:last-of-type {
+                            border-radius: 0 $default-radius/1.5 0 0;
+                        }
+
+                        tbody tr:last-of-type td:first-of-type {
+                            border-radius: 0 0 0 $default-radius/1.5;
+                        }
+                        tbody tr:last-of-type td:last-of-type {
+                            border-radius: 0 0 $default-radius/1.5 0;
+                        }
                     }
     
                 }
                 &:nth-child(1), &:nth-child(2) {
                     .logic-gate__card-container table th, .logic-gate__card-container table td {
-                        padding: $default-padding/1.2 $default-padding*1.8;
+                        padding: 1.2vh 2.4vh;
                     }
                 }
             }

@@ -232,6 +232,7 @@ div.left-reveal.left-revealed > * {
 .history .history__card ul {
   margin-top: 0.8em;
   font-size: 2rem;
+  line-height: 2.8rem;
 }
 
 .binary-code {
@@ -337,19 +338,31 @@ div.left-reveal.left-revealed > * {
   font-weight: 600;
 }
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table td {
-  padding: 0.4vh 1vh;
-}
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table th {
-  border: 1px solid rgba(238, 237, 247, 0.15);
+  padding: 0.6vh 1.2vh;
 }
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:first-of-type td {
   font-weight: 600;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tr:nth-of-type(even) {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:nth-of-type(even) {
+  background-color: rgba(238, 237, 247, 0.05);
+}
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:nth-of-type(odd) {
   background-color: rgba(238, 237, 247, 0.03);
 }
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table thead tr:first-child th:first-of-type {
+  border-radius: 6.6666666667px 0 0 0;
+}
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table thead tr:first-child th:last-of-type {
+  border-radius: 0 6.6666666667px 0 0;
+}
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:last-of-type td:first-of-type {
+  border-radius: 0 0 0 6.6666666667px;
+}
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:last-of-type td:last-of-type {
+  border-radius: 0 0 6.6666666667px 0;
+}
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(1) .logic-gate__card-container table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(1) .logic-gate__card-container table td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(2) .logic-gate__card-container table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(2) .logic-gate__card-container table td {
-  padding: 0.6666666667em 1.44em;
+  padding: 1.2vh 2.4vh;
 }
 .binary-logic .boolean-algebra h4 {
   margin-bottom: 0.8em;
