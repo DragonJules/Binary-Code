@@ -36,11 +36,52 @@ slides.push(new Slide('history', () => {
     historyCards.forEach(card => {
         var _a;
         (_a = card.querySelector('.image-container.blur')) === null || _a === void 0 ? void 0 : _a.classList.add('blur-enabled');
+        let leftRevealEls = [...card.querySelectorAll('.left-reveal')];
+        leftRevealEls.forEach(element => {
+            element.classList.remove('left-revealed');
+        });
     });
 }, undefined, historyCardsReveal));
-slides.push(new Slide('binary-code'));
-slides.push(new Slide('binary-logic'));
-slides.push(new Slide('use-in-elec'));
+const binaryCodeSlides = [...document.querySelectorAll('.binary-code__container')];
+const binaryCodeSlidesDisplay = binaryCodeSlides.map(slide => (() => {
+    slide.classList.remove('on-view');
+    let nextSlideIndex = binaryCodeSlides.indexOf(slide) + 1;
+    if (nextSlideIndex != binaryCodeSlides.length) {
+        binaryCodeSlides[nextSlideIndex].classList.add('on-view');
+    }
+}));
+binaryCodeSlidesDisplay.pop();
+console.log(binaryCodeSlidesDisplay);
+slides.push(new Slide('binary-code', () => {
+    binaryCodeSlides[0].classList.add('on-view');
+    binaryCodeSlides[binaryCodeSlides.length - 1].classList.remove('on-view');
+}, undefined, binaryCodeSlidesDisplay));
+const binaryLogicSlides = [...document.querySelectorAll('.binary-logic__container')];
+const logicGateCards = [...document.querySelectorAll('.logic-gate__card')];
+const logicGateCardsSelect = logicGateCards.map(card => (() => {
+    let previousCardIndex = logicGateCards.indexOf(card) - 1;
+    if (previousCardIndex != -1) {
+        logicGateCards[previousCardIndex].classList.remove('selected');
+    }
+    card.classList.add('selected');
+}));
+const binaryLogicSlideDisplayActions = logicGateCardsSelect.concat([() => {
+        binaryLogicSlides[0].classList.remove('on-view');
+        binaryLogicSlides[1].classList.add('on-view');
+    }]);
+slides.push(new Slide('binary-logic', () => {
+    binaryLogicSlides[0].classList.add('on-view');
+    binaryLogicSlides[1].classList.remove('on-view');
+    logicGateCards[logicGateCards.length - 1].classList.remove('selected');
+}, undefined, binaryLogicSlideDisplayActions));
+const useInElecSlides = [...document.querySelectorAll('.use-in-elec__container')];
+slides.push(new Slide('use-in-elec', () => {
+    useInElecSlides[0].classList.add('on-view');
+    useInElecSlides[1].classList.remove('on-view');
+}, undefined, [() => {
+        useInElecSlides[0].classList.remove('on-view');
+        useInElecSlides[1].classList.add('on-view');
+    }]));
 slides.push(new Slide('end', () => {
     let title_bin_anim_el = binary_animation_elements[1];
     title_bin_anim_el.reset();
@@ -48,7 +89,7 @@ slides.push(new Slide('end', () => {
     let title_bin_anim_el = binary_animation_elements[1];
     title_bin_anim_el.startAnimation(true);
 }));
-let current_slide_index = 3;
+let current_slide_index = 0;
 window.addEventListener('contextmenu', event => event.preventDefault());
 window.addEventListener('keydown', (event) => {
     if (event.key === ' ') {

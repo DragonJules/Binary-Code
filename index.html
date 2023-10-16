@@ -97,335 +97,383 @@
 
     <section class="slide binary-code">
         <h3>The Binary Code</h3>
+        <div class="binary-code__container on-view">
+            <img src="./assets/images/BinaryCode1.png" alt="base10">
+        </div>
+        <div class="binary-code__container">
+            <img src="./assets/images/BinaryCode2.png" alt="base2">
+        </div>
+        <div class="binary-code__container">
+            <img src="./assets/images/BinaryCode3.png" alt="base10to2">
+        </div>
+        <div class="binary-code__container">
+            <img src="./assets/images/BinaryCode4.png" alt="base2to10">
+        </div>        
+        <div class="binary-code__container">
+            <img src="./assets/images/BinaryCode5.png" alt="base2addition" class="base2addition">
+        </div>
     </section>
     
     <section class="slide binary-logic">
         <h3>Binary Logic</h3>
-        <div class="binary-logic__container logic-gates">
+        <div class="binary-logic__container logic-gates on-view">
             <h4>Logic Gates</h4>
         
             <div class="logic-gates__container">
-                <div class="logic-gate__card selected">
+                <div class="logic-gate__card">
                     <h5><strong>Buffer</strong></h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/Buffer2.png" alt="Buffer" class="logic-gate__img">
-                        <img src="./assets/images/Buffer.svg" alt="Buffer Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/Buffer2.png" alt="Buffer" class="logic-gate__img">
+                            <img src="./assets/images/Buffer.svg" alt="Buffer Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th>Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th>Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>NOT</strong>: Inverter</h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/NOT2.png" alt="NOT" class="logic-gate__img">
-                        <img src="./assets/images/NOT.svg" alt="NOT Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/NOT2.png" alt="NOT" class="logic-gate__img">
+                            <img src="./assets/images/NOT.svg" alt="NOT Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th>Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th>Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>AND</strong></h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/AND2.png" alt="AND" class="logic-gate__img">
-                        <img src="./assets/images/And.svg" alt="AND Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/AND2.png" alt="AND" class="logic-gate__img">
+                            <img src="./assets/images/And.svg" alt="AND Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>OR</strong></h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/OR2.png" alt="OR" class="logic-gate__img">
-                        <img src="./assets/images/OR.svg" alt="OR Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/OR2.png" alt="OR" class="logic-gate__img">
+                            <img src="./assets/images/OR.svg" alt="OR Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>NAND</strong>: Not AND</h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/NAND2.png" alt="NAND" class="logic-gate__img">
-                        <img src="./assets/images/NAND.svg" alt="NAND Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/NAND2.png" alt="NAND" class="logic-gate__img">
+                            <img src="./assets/images/NAND.svg" alt="NAND Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>NOR</strong>: NOT OR</h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/NOR2.png" alt="NOR" class="logic-gate__img">
-                        <img src="./assets/images/NOR.svg" alt="NOR Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/NOR2.png" alt="NOR" class="logic-gate__img">
+                            <img src="./assets/images/NOR.svg" alt="NOR Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>XOR</strong>: Exclusive OR</h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/XOR2.png" alt="XOR" class="logic-gate__img">
-                        <img src="./assets/images/XOR.svg" alt="XOR Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/XOR2.png" alt="XOR" class="logic-gate__img">
+                            <img src="./assets/images/XOR.svg" alt="XOR Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="logic-gate__card">
                     <h5><strong>XNOR</strong>: Not Exclusive OR</h5>
-                    <div class="logic-gate__properties">
-                        <img src="./assets/images/XNOR2.png" alt="XNOR" class="logic-gate__img">
-                        <img src="./assets/images/XNOR.svg" alt="XNOR Equation" class="logic-gate__img-equation">
+                    <div class="logic-gate__card-container">
+                        <div class="logic-gate__properties">
+                            <img src="./assets/images/XNOR2.png" alt="XNOR" class="logic-gate__img">
+                            <img src="./assets/images/XNOR.svg" alt="XNOR Equation" class="logic-gate__img-equation">
+                        </div>
+                        <table class="bin-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Input</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                    <td>Q</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="bin-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Input</th>
-                                <th>Output</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>A</td>
-                                <td>B</td>
-                                <td>Q</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
 
         <div class="binary-logic__container boolean-algebra">
-
+            <h4>Boolean Algebra</h4>
+            <div class="boolean-algebra__container">
+                <img src="./assets/images/BooleanAlgebra.png" alt="boolean-algebra">
+            </div>
+            
         </div>
 
     </section>
 
     <section class="slide use-in-elec">
         <h3>Use in electronic and computers</h3>
+        <div class="use-in-elec__container on-view">
+            <h4>Electronic</h4>
+            <div class="use-in-electronic__container">
+                <img src="./assets/images/UseInElec.png" alt="use-in-elec">
+            </div>
+        </div>
+
+        <div class="use-in-elec__container">
+            <h4>Computing</h4>
+            <div class="use-in-computers__container">
+                <img src="./assets/images/UseInComputers.png" alt="use-in-computers">
+            </div>
+        </div>
     </section>
     
     <section class="slide end">

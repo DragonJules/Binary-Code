@@ -1,11 +1,11 @@
 @font-face {
 	font-family: 'Mulish';
-	src: url(../fonts/Mulish-VariableFont_wght.ttf) format('truetype');
+	src: url(../assets/fonts/Mulish-VariableFont_wght.ttf) format('truetype');
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Source Code Pro';
-	src: url(../fonts/SourceCodePro-VariableFont_wght.ttf);
+	src: url(../assets/fonts/SourceCodePro-VariableFont_wght.ttf);
 	font-style: normal;
 }
 
@@ -58,14 +58,38 @@
 }
 
 
+.binary-code {
+    display: flex;
+    flex-direction: column;
+    .binary-code__container {
+        display: none;
+        flex-grow: 1;
+        &.on-view {
+            display: grid;
+            place-items: center;
+            img {
+                width: 70%;
+                &.base2addition {
+                    width: auto;
+                    height: 60%;
+                }
+            }
+        }
+    }    
+}
+
 
 
 .binary-logic {
     display: flex;
     flex-direction: column;
+
+    .binary-logic__container:not(.on-view) {
+        display: none;
+    }
+
     .logic-gates {
         flex-grow: 1;
-
         display: flex;
         flex-direction: column;
         img {
@@ -82,17 +106,22 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 1fr);
-            gap: calc($default-padding*4);
+            gap: 3vh;
 
             .logic-gate__card {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
                 border-radius: $default-radius;
+                padding: 3vh;
+
                 backdrop-filter: blur(20px);
                 background-color: rgba($color: $txt-light, $alpha: .1);
                 border: 1.5px solid rgba($color: $txt-light, $alpha: .3);
-                padding: $default-padding*2.5;
+
+                transition: box-shadow 0.5s ease,
+                    background-color 0.5s ease,
+                    border-color 0.5s ease,;
+
 
                 h5 {
                     font-size: 1.5rem;
@@ -101,72 +130,127 @@
                     strong {
                         color: $txt-light;
                     }
+                    margin-bottom: $default-padding;
                 }
-
-
                 &.selected {
                     background-color: rgba($color: $txt-light, $alpha: .15);
                     border-color: rgba($color: $txt-light, $alpha: .6); 
-                    // @extend .glow
+                    box-shadow: 0 0 2em rgba($color: $txt-light, $alpha: .3);
                 }
                 
-                
-                .logic-gate__properties {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;  
-                    place-items: center;
-                    .logic-gate__img {
-                        width: 90%;
+
+                .logic-gate__card-container {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    .logic-gate__properties {
+                        height: 4.5vh;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;  
+                        place-items: center;
+                        .logic-gate__img {
+                            height: 100%;
+                        }
+                        .logic-gate__img-equation {
+                            height: 100%;
+                            padding: $default-padding;
+                            border: 2px solid rgba(0, 0, 0, 0.5);
+                        }
                     }
-                    .logic-gate__img-equation {
-                        height: 90%;
-                        padding: $default-padding;
-                        border: 2px solid rgba(0, 0, 0, 0.5);
+    
+                    .bin-table {
+                        border-collapse: collapse;
+                        width: 100%;
+    
+                        thead tr {
+                            background-color: rgba($color: $txt-light, $alpha: .15);
+                            text-align: left;
+                        }
+    
+                        th {
+                           font-size: 1.2rem; 
+                           font-weight: 600;
+                        }
+    
+                        th, td {
+                            padding: 0.4vh 1vh;
+                        }
+    
+                        tbody tr, td, th {
+                            border: 1px solid rgba($color: $txt-light, $alpha: .15);
+                        }
+    
+                        tbody tr:first-of-type td {
+                            font-weight: 600;
+                        }
+    
+                        tr:nth-of-type(even) {
+                            background-color: rgba($color: $txt-light, $alpha: .03);
+                        }
+
                     }
+    
                 }
-
-                .bin-table {
-                    border-collapse: collapse;
-                    width: 100%;
-
-                    thead tr {
-                        background-color: rgba($color: $txt-light, $alpha: .15);
-                        text-align: left;
-                    }
-
-                    th {
-                       font-size: 1.2rem; 
-                       font-weight: 600;
-                    }
-
-                    th, td {
-                        padding: $default-padding/2.5 $default-padding;
-                    }
-
-                    tbody tr, td, th {
-                        border: 1px solid rgba($color: $txt-light, $alpha: .15);
-                    }
-
-                    tbody tr:first-of-type td {
-                        font-weight: 600;
-                    }
-
-                    tr:nth-of-type(even) {
-                        background-color: rgba($color: $txt-light, $alpha: .03);
-                    }
-
-                }
-
-                &:nth-of-type(1), &:nth-of-type(2) {
-                    th, td {
+                &:nth-child(1), &:nth-child(2) {
+                    .logic-gate__card-container table th, .logic-gate__card-container table td {
                         padding: $default-padding/1.2 $default-padding*1.8;
                     }
                 }
-
             }
         }
     }
 
+    .boolean-algebra {
+        h4 {
+            margin-bottom: $default-padding;
+        }
+        .boolean-algebra__container {
+            display: grid;
+            place-items: center;
+            img {
+                width: 80%;
+            }
+        }
+    }
+}
+
+.use-in-elec {
+    display: flex;
+    flex-direction: column;
+    .use-in-elec__container:not(.on-view) {
+        display: none;
+    }
+    .use-in-elec__container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        h4 {
+            margin-bottom: $default-padding;
+        }
+        .use-in-electronic__container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+            img {
+                // height: 20%;
+                height: 72vh;
+            }
+        }
+        .use-in-computers__container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+            img {
+                // height: 20%;
+                height: 72vh;
+            }
+        }
+    }
+    
 
 }
 

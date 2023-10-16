@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Mulish";
-  src: url(../fonts/Mulish-VariableFont_wght.ttf) format("truetype");
+  src: url(../assets/fonts/Mulish-VariableFont_wght.ttf) format("truetype");
   font-style: normal;
 }
 @font-face {
   font-family: "Source Code Pro";
-  src: url(../fonts/SourceCodePro-VariableFont_wght.ttf);
+  src: url(../assets/fonts/SourceCodePro-VariableFont_wght.ttf);
   font-style: normal;
 }
 @keyframes txt-glow {
@@ -104,7 +104,7 @@ body {
   top: 75%;
   left: 30%;
   width: 25%;
-  background-color: hsl(230, 69%, 35%);
+  background-color: #1c3097;
   animation-delay: -7s;
 }
 .color-circle-container :nth-child(4) {
@@ -234,9 +234,32 @@ div.left-reveal.left-revealed > * {
   font-size: 2rem;
 }
 
+.binary-code {
+  display: flex;
+  flex-direction: column;
+}
+.binary-code .binary-code__container {
+  display: none;
+  flex-grow: 1;
+}
+.binary-code .binary-code__container.on-view {
+  display: grid;
+  place-items: center;
+}
+.binary-code .binary-code__container.on-view img {
+  width: 70%;
+}
+.binary-code .binary-code__container.on-view img.base2addition {
+  width: auto;
+  height: 60%;
+}
+
 .binary-logic {
   display: flex;
   flex-direction: column;
+}
+.binary-logic .binary-logic__container:not(.on-view) {
+  display: none;
 }
 .binary-logic .logic-gates {
   flex-grow: 1;
@@ -254,23 +277,24 @@ div.left-reveal.left-revealed > * {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 3.2em;
+  gap: 3vh;
 }
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   border-radius: 10px;
+  padding: 3vh;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   background-color: rgba(238, 237, 247, 0.1);
   border: 1.5px solid rgba(238, 237, 247, 0.3);
-  padding: 2em;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
 }
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card h5 {
   font-size: 1.5rem;
   font-weight: 400;
   color: #9290a4;
+  margin-bottom: 0.8em;
 }
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card h5 strong {
   color: #eeedf7;
@@ -278,46 +302,98 @@ div.left-reveal.left-revealed > * {
 .binary-logic .logic-gates .logic-gates__container .logic-gate__card.selected {
   background-color: rgba(238, 237, 247, 0.15);
   border-color: rgba(238, 237, 247, 0.6);
+  box-shadow: 0 0 2em rgba(238, 237, 247, 0.3);
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__properties {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .logic-gate__properties {
+  height: 4.5vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__properties .logic-gate__img {
-  width: 90%;
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .logic-gate__properties .logic-gate__img {
+  height: 100%;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__properties .logic-gate__img-equation {
-  height: 90%;
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .logic-gate__properties .logic-gate__img-equation {
+  height: 100%;
   padding: 0.8em;
   border: 2px solid rgba(0, 0, 0, 0.5);
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table {
   border-collapse: collapse;
   width: 100%;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table thead tr {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table thead tr {
   background-color: rgba(238, 237, 247, 0.15);
   text-align: left;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table th {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table th {
   font-size: 1.2rem;
   font-weight: 600;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table td {
-  padding: 0.32em 0.8em;
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table td {
+  padding: 0.4vh 1vh;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table tbody tr, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table th {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table th {
   border: 1px solid rgba(238, 237, 247, 0.15);
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table tbody tr:first-of-type td {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tbody tr:first-of-type td {
   font-weight: 600;
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card .bin-table tr:nth-of-type(even) {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card .logic-gate__card-container .bin-table tr:nth-of-type(even) {
   background-color: rgba(238, 237, 247, 0.03);
 }
-.binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-of-type(1) th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-of-type(1) td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-of-type(2) th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-of-type(2) td {
+.binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(1) .logic-gate__card-container table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(1) .logic-gate__card-container table td, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(2) .logic-gate__card-container table th, .binary-logic .logic-gates .logic-gates__container .logic-gate__card:nth-child(2) .logic-gate__card-container table td {
   padding: 0.6666666667em 1.44em;
+}
+.binary-logic .boolean-algebra h4 {
+  margin-bottom: 0.8em;
+}
+.binary-logic .boolean-algebra .boolean-algebra__container {
+  display: grid;
+  place-items: center;
+}
+.binary-logic .boolean-algebra .boolean-algebra__container img {
+  width: 80%;
+}
+
+.use-in-elec {
+  display: flex;
+  flex-direction: column;
+}
+.use-in-elec .use-in-elec__container:not(.on-view) {
+  display: none;
+}
+.use-in-elec .use-in-elec__container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.use-in-elec .use-in-elec__container h4 {
+  margin-bottom: 0.8em;
+}
+.use-in-elec .use-in-elec__container .use-in-electronic__container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.use-in-elec .use-in-elec__container .use-in-electronic__container img {
+  height: 72vh;
+}
+.use-in-elec .use-in-elec__container .use-in-computers__container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.use-in-elec .use-in-elec__container .use-in-computers__container img {
+  height: 72vh;
 }
 
 .end {
